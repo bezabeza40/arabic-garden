@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بستان الضاد | زهرات عربية</title>
+    <style>
+        :root {
+            --bg-color: #F4F1EA;
+            --primary-color: #1E5631;
+            --accent-color: #D4AF37;
+            --text-color: #2C3E50;
+            --card-bg: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--accent-color);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+        }
+
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.2rem;
+            color: #E8D48A;
+        }
+
+        nav {
+            background-color: #143D21;
+            padding: 0.8rem;
+            text-align: center;
+        }
+
+        nav button {
+            background: none;
+            border: none;
+            color: #FFFFFF;
+            font-size: 1.1rem;
+            font-family: 'Amiri', serif;
+            margin: 0 15px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        nav button:hover, nav button.active {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        .flower-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-right: 6px solid var(--accent-color);
+        }
+
+        .flower-card h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+
+        .meta {
+            font-size: 0.95rem;
+            color: #7F8C8D;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #E0DED7;
+            padding-bottom: 0.5rem;
+        }
+
+        .flower-card p {
+            white-space: pre-wrap;
+            word-break: break-word;
+            font-size: 1.15rem;
+        }
+
+        .static-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-right: 6px solid var(--primary-color);
+            font-size: 1.15rem;
+        }
+
+        .static-card h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .empty-message {
+            text-align: center;
+            color: #7F8C8D;
+            font-style: italic;
+            padding: 3rem;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🌿 بستان الضاد</h1>
+        <p>بستان واحد.. تنبت فيه أزهار اللغة العربية وآدابها</p>
+    </header>
+
+    <!-- شريط التنقل للقراءة فقط -->
+    <nav>
+        <button id="navHome" class="active" onclick="switchTab('home')">الرئيسية</button>
+        <button id="navAbout" onclick="switchTab('about')">عن البستان</button>
+        <button id="navContact" onclick="switchTab('contact')">تواصل معنا</button>
+    </nav>
+
+    <div class="container">
+
+        <!-- 1. قسم الرئيسية (عرض المقالات للقارئ فقط) -->
+        <div id="sectionHome" class="page-section active">
+            <div id="flowersFeed"></div>
+        </div>
+
+        <!-- 2. قسم عن البستان -->
+        <div id="sectionAbout" class="page-section">
+            <div class="static-card">
+                <h2>عن بستان الضاد</h2>
+                <p>هذا البستان هو مساحة رحبة ومفتوحة لكل محبي اللغة العربية وأدبها الرفيع. لا تقيّدنا الأبواب ولا الفصول، بل نجمع من كل بستان زهرة؛ لنجد العذب من الشعر، وطُرف البيان، والفوائد اللغوية، والأمثال السائرة في مجرى واحد متدفّق يروي ظمأ الشغوفين بالفصحى.</p>
+                <p>هذه المدونة مخصصة للقراءة الهادئة والمتأملة لدرر لغة الضاد.</p>
+            </div>
+        </div>
+
+        <!-- 3. قسم تواصل معنا -->
+        <div id="sectionContact" class="page-section">
+            <div class="static-card">
+                <h2>تواصل معنا</h2>
+                <p>يسعدنا تواصلكم الراقي ومشاركتكم الشغف بلغة القرآن والبيان.</p>
+                <p><strong>البريد الإلكتروني للبستان:</strong> contact@arabic-garden.blogs</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 - بستان الضاد</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", loadFlowers);
+
+        function switchTab(tabName) {
+            document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
+            document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+
+            if (tabName === 'home') {
+                document.getElementById('sectionHome').classList.add('active');
+                document.getElementById('navHome').classList.add('active');
+            } else if (tabName === 'about') {
+                document.getElementById('sectionAbout').classList.add('active');
+                document.getElementById('navAbout').classList.add('active');
+            } else if (tabName === 'contact') {
+                document.getElementById('sectionContact').classList.add('active');
+                document.getElementById('navContact').classList.add('active');
+            }
+        }
+
+        // دالة لعرض المقالات للقارئ بدون أزرار تعديل أو حذف
+        function loadFlowers() {
+            const feed = document.getElementById("flowersFeed");
+            let flowers = JSON.parse(localStorage.getItem("myFlowers")) || [];
+
+            if (flowers.length === 0) {
+                feed.innerHTML = '<div class="empty-message">البستان في انتظار غرس الزهرات الأولى.. 🌸</div>';
+                return;
+            }
+
+            feed.innerHTML = "";
+            flowers.forEach(flower => {
+                const card = document.createElement("article");
+                card.className = "flower-card";
+                card.innerHTML = `
+                    <h2>${flower.title}</h2>
+                    <div class="meta">تاريخ النشر: ${flower.date}</div>
+                    <p>${flower.content}</p>
+                `;
+                feed.appendChild(card);
+            });
+        }
+    </script>
+
+</body>
+</html>
